@@ -17,7 +17,7 @@ func (c *Cache) Set(key string, v interface{}) {
 	}
 }
 
-func (c *Cache) Get(key string) int {
+func (c Cache) Get(key string) int {
 	return c.m[key]
 }
 
