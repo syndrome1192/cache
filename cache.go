@@ -1,25 +1,19 @@
 package cache
 
 type Cache struct {
-	m map[string]CacheItem
-}
-
-type CacheItem struct {
-	value int
+	m map[string]int
 }
 
 func New() *Cache {
 	return &Cache{
-		m: make(map[string]CacheItem),
+		m: make(map[string]int),
 	}
 }
 
 func (c *Cache) Set(key string, v interface{}) {
 	switch value := v.(type) {
 	case int:
-		c.m[key] = CacheItem{
-			value: value,
-		}
+		c.m[key] = value
 	}
 }
 
